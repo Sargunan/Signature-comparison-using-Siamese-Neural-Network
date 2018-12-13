@@ -1,0 +1,143 @@
+.active {
+    outline: 5px solid #33CC00;
+    outline-offset:-5px;
+}
+
+
+.head-wrap {
+    text-align:center;
+    width:100%;
+    height:100px;
+    background-image:url('../images/AxisAIChallenge.png');
+}
+
+body {
+  background-color: lightblue;
+}
+
+#bbox-container {
+    background-color: #E0E0E0;
+}
+
+#bbox-slider .slider-selection {
+    background: #BABABA;
+}
+
+.slider {
+    padding: 5px;
+    font-size:10px;
+    font-weight:400;
+}
+
+form {
+    padding:20px 0px;
+    text-align:center;
+}
+
+#img {
+    display:inline-block;
+}
+
+
+
+.info-area {
+    height:550px;
+    text-align:center;
+}
+
+.loaded-img {
+    padding:10px;
+    max-width:400px;
+    max-height:400px;
+    border-radius:5px;
+    border:2px solid #d3d3d3;
+}
+
+.status-area {
+    margin:20px 0px;
+}
+
+.result {
+    display:block;
+    font-size:20px;
+    font-weight:700;
+}
+
+.eval {
+    font-size:15px;
+}
+
+.success {
+    color:#00b33c;
+}
+
+.failure {
+    color:#ff0000;
+}
+
+.confidence {
+    display:block;
+    font-style:italic;
+}
+
+footer {
+    bottom:0;
+    width:100%;
+}
+
+.references.container {
+    padding:20px 0px;
+    text-align:center;
+}
+
+.view-container {
+    display:block;
+}
+
+.view-container a {
+    text-decoration:none;
+}
+
+@media (max-width:447px) {
+    form input {
+        width:100%;
+    }
+    input:first-child {
+        margin:10px 0px 5px 0px;
+    }
+    input:last-child {
+        margin:5px 0px 10px 0px;
+    }
+    .loaded-img {
+        max-width:300px;
+        max-height:300px;
+    }
+    .recent {
+        margin:5px 5px;
+    }
+}
+
+.container label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #333;
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+.container input{
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+
+    nav a label{
+        padding: 0 0.25em;
+    }
