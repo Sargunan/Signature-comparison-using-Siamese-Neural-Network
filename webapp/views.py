@@ -20,13 +20,14 @@ global model
 #         ],
 #     }
 
-@app.route('/')
+@app.route('/home')
 def home1():
-    return render_template('index.html')
+    model = main1([])
+    return render_template('welcome.html')
 
 @app.route('/load')
 def index():
-    model = main1([])
+    #model = main1([])
     return render_template('index.html')
 
     # return render_template('index.html')
@@ -59,9 +60,9 @@ def predict():
         results = getpredictions(img_name, custid)
         
         if(results == 1):
-            results = "Matched"
+            results = " Original "
         if(results == 0):
-            results = "Not Matched"
+            results = " Forgery "
         # Delete image when done with analysis
         #os.remove(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
 
@@ -90,14 +91,13 @@ def upload():
 
         #img = open_image(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
         # Run Prediction on the model
-        img = Image.open(img_file.stream).convert('RGB')
-        im9g = np.asarray(img)
         results = insertTable(custid,img_name,os.path.join(app.config['UPLOAD_FOLDER'], img_name))
         
         if(results == 1):
             results = "Upload Successfully"
         if(results == 0):
-            results = "Not Matched"
+            results = "Not "
+        results = "Upload Successfully"
         # Delete image when done with analysis
         #os.remove(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
 
@@ -110,7 +110,7 @@ import sqlite3
 
 
 def createconnection():
-    con = sqlite3.connect('test7.db')
+    con = sqlite3.connect('test8.db')
     cursor = con.cursor()
     return cursor
 

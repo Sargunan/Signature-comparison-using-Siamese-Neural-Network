@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 16 12:24:27 2017
-
-@author: sounak_dey and anjan_dutta
-"""
-
 import numpy as np
 np.random.seed(1337)  # for reproducibility
 import os
@@ -132,39 +125,8 @@ def read_signature_data(dataset, ntuples, height = 30, width = 100):
 def main1(args):
     global datagen
     global model
-    dataset = 'Bengali'
-    dataset = 'Hindi'
     dataset = 'dataset2'
-    if dataset == 'Bengali':
-    
-        tot_writers = 9
-        num_train_writers = 7
-        num_valid_writers = 1
-        
-    elif dataset == 'Hindi':
-        
-        tot_writers = 9
-        num_train_writers = 7
-        num_valid_writers = 1
-        
-    elif dataset == 'GPDS300':
-    
-        tot_writers = 300
-        num_train_writers = 240
-        num_valid_writers = 30
-        
-    elif dataset == 'GPDS960':
-    
-        tot_writers = 4000
-        num_train_writers = 3200
-        num_valid_writers = 400
-        
-    elif dataset == 'CEDAR1':
-    
-        tot_writers = 55
-        num_train_writers = 45
-        num_valid_writers = 5
-    elif dataset == 'dataset2':
+    if dataset == 'dataset2':
     
         tot_writers = 12
         num_train_writers = 10
@@ -219,72 +181,31 @@ def main1(args):
 #    sys.exit()     
     
     # callbacks
-    fname = 'D:\\cocoapp-master\\cocoapp-master\\model\\dataset2.hdf5'
-    #fname = 'D:\\cocoapp-master\\cocoapp-master\\model\\weights_Bengali.hdf5'
-    #fname = 'D:\\cocoapp-master\\cocoapp-master\\model\\weights_Hindi.hdf5'
-#     fname = '/home/sounak/Desktop/weights_GPDS300.hdf5'
-    #checkpointer = ModelCheckpoint(filepath=fname, verbose=1, save_best_only=True)
-#    tbpointer = TensorBoard(log_dir='/home/adutta/Desktop/Graph', histogram_freq=0,  
-#          write_graph=True, write_images=True)
-    #print int(datagen.samples_per_valid)
-    # print datagen.samples_per_train
-    # print int(datagen.samples_per_valid)
-    # print int(datagen.samples_per_test)
-    # sys.exit()
-    # train model   
+    fname = 'dataset2.hdf5'
+    #fname = "D:\\cocoapp-master\\cocoapp-master\\model\\weights_Hindi.hdf5"
+    #  To train model uncomment below line
     #model.fit_generator(generator=datagen.next_train(), steps_per_epoch=100,samples_per_epoch=datagen.samples_per_train, nb_epoch=nb_epoch,
                         #validation_data=datagen.next_valid(), nb_val_samples=int(datagen.samples_per_valid),callbacks=[checkpointer])   # KERAS 1
 
     # model.fit_generator(generator=datagen.next_train(), steps_per_epoch=960, epochs=nb_epoch,
     #                     validation_data=datagen.next_valid(), validation_steps=120, callbacks=[checkpointer])  # KERAS 2
     # load the best weights for test
+    
     model.load_weights(fname)
     print (fname)
     print ('Loading the best weights for testing done...') 
    
     #print (datagen.next_test())
     #tr_pred = model.predict_generator(generator=datagen.next_train(), val_samples=int(datagen.samples_per_train))
-    '''
-    te_pred = model.predict(datagen.next_test())
-    print (te_pred)
-    if(te_pred > 0.5):
-        te_pred = 0
-    else:
-        te_pred = 1
-    
-    
-    print (te_pred)
-    '''
-    '''
-#    tr_acc = compute_accuracy_roc(tr_pred, datagen.train_labels)
-#    te_acc = compute_accuracy_roc(te_pred, datagen.test_labels)
-    
-#    print('* Accuracy on training set: %0.2f%%' % (100 * tr_acc))
-    #print('* Accuracy on test set: %0.2f%%' % (100 * te_acc))
-    '''
 # Main Function    
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Signature Verification')
-    # required training parameters
-    parser.add_argument('--dataset', '-ds', action='store', type=str, default='dataset2',
-                  help='Please mention the database.')
-    # required tensorflow parameters
-    parser.add_argument('--epoch', '-e', action='store', type=int, default=20, 
-                  help='The maximum number of iterations. Default: 20')
-    parser.add_argument('--num_samples', '-ns', action='store', type=int, default=276, 
-                  help='The number of samples. Default: 276')
-    parser.add_argument('--batch_size', '-bs', action='store', type=int, default=138,
-                  help='The mini batch size. Default: 138')
-    args = parser.parse_args()
-# print args.dataset, args.epoch, args.num_samples, args.batch_size
 #    sys.exit()
-    main(args)
+    #main(args)
     
 import fnmatch    
 def find_files(directory, pattern):
     for root, dirs, files in os.walk(directory):
         for basename in files:
-           # print (basename)
+            print (basename)
             if fnmatch.fnmatch(basename, pattern):
                 filename = os.path.join(root, basename)
                 yield filename
@@ -294,7 +215,7 @@ import sqlite3
 
 
 def createconnection():
-    con = sqlite3.connect('test7.db')
+    con = sqlite3.connect('test8.db')
     cursor = con.cursor()
     return cursor
 
@@ -316,7 +237,7 @@ def get_file_from_db(customer_id):
 	cursor.connection.commit()
 	return item
 
-
+import time
     
 def getpredictions(imagename, customer_id):
     print (customer_id)
@@ -324,8 +245,8 @@ def getpredictions(imagename, customer_id):
     #pattern = '*-G-*'
     #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\Hindi\\' + customer_id 
     #pattern = '*-G-*'
-    #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\dataset3\\' 
-    #pattern = id + '??' + id + '.png'
+ #   fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\dataset3\\' 
+#    pattern = id + '??' + id + '.png'
     #files = []
     
     testFile = os.path.join(app.config['UPLOAD_FOLDER'], imagename)
@@ -336,27 +257,101 @@ def getpredictions(imagename, customer_id):
         #f = 'D:\\cocoapp-master\\cocoapp-master\\cocoapp\\static\\tmp-img\\H-S-1-G-03.jpg'
         #testFile = 'D:\\cocoapp-master\\cocoapp-master\\cocoapp\\static\\tmp-img\\H-S-1-G-03.jpg'
         #ablob = get_files_from_db(id)
-    te_pred = 0
+    te_pred = -1
+    print (items)
+    #print (items)
     for file in items:
         try:
-            originalFile = os.path.join(app.config['UPLOAD_FOLDER'], file[1])
+            originalFile = os.path.join(app.config['UPLOAD_FOLDER1'], file[1])
             with open(originalFile, 'wb') as output_file:
                 output_file.write(file[0])
+                #time.sleep(3)
                 print (originalFile)
                 print (testFile)
                 te_pred = model.predict(datagen.next_test(file1 = originalFile,file2 = testFile))
+                print ("input")
                 print (file[1], testFile, te_pred)
-                if(te_pred == 0.0):
+                if(te_pred < 0.18):
                     te_pred = 1
                     break
                 else:
                     te_pred = 0
             #print (file[1])
-        except:
-            print('error')
+        except Exception as e:
+            print(e)
     return te_pred
-        
-        
 
-    
-    
+import pandas as pd
+def getpredictionsFromFile():
+    df = pd.DataFrame(columns=['FileName','Forgery'])
+    #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\Bengali\\' + id 
+    #pattern = '*-G-*'
+    #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\Hindi\\' + customer_id 
+    #pattern = '*-G-*'
+    referenceDir = 'reference' 
+    files = []
+    #test_directory = 'D:\\cocoapp-master\\cocoapp-master\\model\\dataset3\\forge'
+    test_directory = 'FinalTest'
+    id =[]
+    for root, dirs, files in os.walk(test_directory):
+        for basename in files:
+            #a,b,c = basename.split("_")
+            files = []
+            
+            id = basename[3:6]
+            print (id)
+            pattern = 'U11' + id + '*'
+            print (pattern)
+            for filename in find_files(referenceDir, pattern):
+                files.append(filename)
+            te_pred = "Forgery"
+            for file in files:
+                completefliePath = os.path.join(root, basename)
+                print (file, completefliePath)
+                te_pred = model.predict(datagen.next_test(file1 = file,file2 = completefliePath))
+                print (file, basename, te_pred)
+                if(te_pred < 0.17):
+                    te_pred = "Yes"
+                    break
+                else:
+                    te_pred = "No"
+            df = df.append({'FileName' : basename , 'Forgery' : te_pred} , ignore_index=True)
+    df.to_csv("c:\\temp\\output1.csv", index = False)
+
+from statistics import stdev  
+import numpy as np   
+def getpredictionsFromCedar():
+    df = pd.DataFrame(columns=['FileName','Decision'])
+    #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\Bengali\\' + id 
+    #pattern = '*-G-*'
+    #fullName = 'D:\\cocoapp-master\\cocoapp-master\\model\\Hindi\\' + customer_id 
+    #pattern = '*-G-*'
+    referenceDir = 'signatures\\full_org' 
+    files = []
+    test_directory = 'signatures\\test'
+    id =[]
+    for root, dirs, files in os.walk(test_directory):
+        for basename in files:
+            a,b,c = basename.split("_")
+            files = []
+            id = b
+            pattern = 'original_'+ id +'_'+ '*'
+            #print (pattern)
+            for filename in find_files(referenceDir, pattern):
+                files.append(filename)
+            te_pred = "Forgery1"
+            for file in files:
+                completefliePath = os.path.join(root, basename)
+                #print (file, completefliePath)
+                te_pred = model.predict(datagen.next_test(file1 = file,file2 = completefliePath))
+                #print (file, basename, te_pred)
+                if(te_pred == 0.0):
+                    te_pred = "Original"
+                    break
+                else:
+                    te_pred = "Forgery"
+            df = df.append({'FileName' : basename , 'Decision' : te_pred} , ignore_index=True)
+    df.to_csv("c:\\temp\\output.csv", index = False)
+            
+main1([])
+getpredictionsFromFile()
