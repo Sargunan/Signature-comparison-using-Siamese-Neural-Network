@@ -310,13 +310,13 @@ def getpredictionsFromFile():
                 print (file, completefliePath)
                 te_pred = model.predict(datagen.next_test(file1 = file,file2 = completefliePath))
                 print (file, basename, te_pred)
-                if(te_pred < 0.17):
-                    te_pred = "Yes"
+                if(te_pred < 0.1):
+                    te_pred = "No"
                     break
                 else:
-                    te_pred = "No"
+                    te_pred = "Yes"
             df = df.append({'FileName' : basename , 'Forgery' : te_pred} , ignore_index=True)
-    df.to_csv("c:\\temp\\output1.csv", index = False)
+    df.to_csv("c:\\temp\\output4.csv", index = False)
 
 from statistics import stdev  
 import numpy as np   
