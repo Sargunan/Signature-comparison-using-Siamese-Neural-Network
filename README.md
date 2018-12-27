@@ -36,8 +36,8 @@ https://youtu.be/HrVEKQ_5GtQ
 ##Architecture
 
 <p align="center">
-  <img src="imgs/Architecture.png">
-">
+  <img src="imgs/Architecture.png" height="420" width="520>
+
 </p>
 
 
@@ -46,7 +46,7 @@ https://youtu.be/HrVEKQ_5GtQ
 
 <p align="center">
   <img src="imgs/preprocessing.png" height="420" width="520">
-">
+
 </p>
 
 
@@ -55,13 +55,13 @@ https://youtu.be/HrVEKQ_5GtQ
 ## Result 
 
 <p align="center">
-  <img src="imgs/result1.png">
+  <img src="imgs/result1.png" height="420" width="520>
 ">
 </p>
 
 
 <p align="center">
-  <img src="imgs/result2.jpg">
+  <img src="imgs/result2.jpg" height="420" width="520>
 ">
 </p>
 
