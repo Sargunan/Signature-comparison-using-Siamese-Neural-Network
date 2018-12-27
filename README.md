@@ -22,7 +22,17 @@ HINDI and Bengali Dataset
 https://youtu.be/HrVEKQ_5GtQ
 
 
+
+
+
+
 ***THE DEVELOPING IS ON PROGRESS! THE REPO WILL BE UPDATED SOON, !***
+
+
+--------------
+
+
+
 ##Architecture
 
 <p align="center">
@@ -31,10 +41,11 @@ https://youtu.be/HrVEKQ_5GtQ
 </p>
 
 
+
 ##Preprocessing
 
 <p align="center">
-  <img src="imgs/preprocessing.png height="42" width="42"">
+  <img src="imgs/preprocessing.png" height="42" width="42">
 ">
 </p>
 
