@@ -45,7 +45,7 @@ https://youtu.be/HrVEKQ_5GtQ
 ##Preprocessing
 
 <p align="center">
-  <img src="imgs/preprocessing.png" height="420" width="420">
+  <img src="imgs/preprocessing.png" height="420" width="520">
 ">
 </p>
 
