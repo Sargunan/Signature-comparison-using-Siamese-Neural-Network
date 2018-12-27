@@ -9,8 +9,9 @@ Step 1: Accept & Store Genuine Signature Image: Take actual signature scanned im
 
 Step 2: Accept & Compare Signature Images: Accept inputs of Customer ID, and corresponding signature image. Compare with the signature stored in DB against the given Customer ID, and return a Confidence Match Score between the two signature images
 
+# More Details can be found in PPT
 
-Dataset used :
+## Dataset used :
 
 CEDAR
 
@@ -106,6 +107,11 @@ See required commands to install TensorFlow Object Detection API on Ubuntu in [h
 **5.) Install Flask**
 
 **6.) Install Sqlite**
+
+
+
+# Run "run.py"
+
 
 ## License
 This system is available under the MIT license. See the LICENSE file for more info.
