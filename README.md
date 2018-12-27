@@ -45,15 +45,12 @@ https://youtu.be/HrVEKQ_5GtQ
 ##Preprocessing
 
 <p align="center">
-  <img src="imgs/preprocessing.png" height="42" width="42">
+  <img src="imgs/preprocessing.png" height="420" width="420">
 ">
 </p>
 
 
-<p align="center">
-  <img src="imgs/Architecture.png">
-">
-</p>
+
 
 ## Result 
 
