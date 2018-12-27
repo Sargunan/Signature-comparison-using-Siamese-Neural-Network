@@ -33,16 +33,16 @@ https://youtu.be/HrVEKQ_5GtQ
 
 
 
-##Architecture
+## Architecture
 
 <p align="center">
   <img src="imgs/Architecture.png" height="420" width="520>
 
 </p>
 
+-------------------------------------------------------------------------------------------
 
-
-##Preprocessing
+## Preprocessing
 
 <p align="center">
   <img src="imgs/preprocessing.png" height="420" width="520">
@@ -50,7 +50,7 @@ https://youtu.be/HrVEKQ_5GtQ
 </p>
 
 
-
+-------------------------------------------------------------------------------------------
 
 ## Result 
 
@@ -59,12 +59,14 @@ https://youtu.be/HrVEKQ_5GtQ
 ">
 </p>
 
+-------------------------------------------------------------------------------------------
 
 <p align="center">
   <img src="imgs/result2.jpg" height="420" width="520>
 ">
 </p>
 
+-------------------------------------------------------------------------------------------
 
 TensorFlow™ is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them.
 
