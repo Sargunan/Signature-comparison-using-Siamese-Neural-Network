@@ -24,13 +24,40 @@ HINDI and Bengali Dataset
 </p>
 
 ***THE DEVELOPING IS ON PROGRESS! THE REPO WILL BE UPDATED SOON, !***
+##Architecture
 
-## Theory
+<p align="center">
+  <img src="imgs/Architecture.png">
+">
+</p>
+
+
+##Preprocessing
+
+<p align="center">
+  <img src="imgs/preprocessing.png height="42" width="42"">
+">
+</p>
+
+
+<p align="center">
+  <img src="imgs/Architecture.png">
+">
+</p>
+
+## Result 
 
 <p align="center">
   <img src="imgs/result1.png">
 ">
 </p>
+
+
+<p align="center">
+  <img src="imgs/result2.jpg">
+">
+</p>
+
 
 TensorFlow™ is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them.
 
