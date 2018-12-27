@@ -28,7 +28,8 @@ HINDI and Bengali Dataset
 ## Theory
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/22610163/35445395-8dba4406-02c2-11e8-84bf-b480edbe9472.jpg">
+  <img src="imgs/result1.png">
+">
 </p>
 
 TensorFlow™ is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them.
